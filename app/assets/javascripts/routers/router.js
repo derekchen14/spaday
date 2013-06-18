@@ -6,7 +6,8 @@ var SpadayRouter = Backbone.Router.extend({
     
   },
   index: function(){
-    alert("home page");
+    var view = new EntriesIndex();
+    $("#container").html(view.render().el);
   },
   show: function(id){
     alert("Entry "+id);
