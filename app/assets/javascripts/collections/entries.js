@@ -1,3 +1,3 @@
 var Entries = Backbone.Collection.extend({
-  url: 'api/entries'
+  url: '/api/entries'
 });
