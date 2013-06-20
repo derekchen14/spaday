@@ -5,3 +5,5 @@
     <li><%= entry.get('name') %></li>
   <% end %>
 </ul>
+
+<%= @entries.length %>
