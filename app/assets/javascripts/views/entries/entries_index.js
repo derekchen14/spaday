@@ -6,7 +6,8 @@ var EntriesIndex = Backbone.View.extend({
   },
 
   events: {
-  	'submit #new_entry': 'addPeople'
+  	'submit #new_entry': 'addPeople',
+    'click #draw': 'drawWinner'
   },
   render: function(){
     this.$el.html(this.template());
@@ -41,6 +42,11 @@ var EntriesIndex = Backbone.View.extend({
   appendEntry: function (entry) {
   	var view = new Entry({model: entry});
   	$('#entries').append(view.render().el);
+  },
+
+  drawWinner: function(event) {
+    event.preventDefault();
+    this.collection.drawWinner();
   }
 
 });
