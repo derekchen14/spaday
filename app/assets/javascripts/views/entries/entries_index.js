@@ -15,9 +15,29 @@ var EntriesIndex = Backbone.View.extend({
   },
   addPeople: function (e) {
   	e.preventDefault();
-  	this.collection.create({name: $('#new_entry_name').val()});
-  	$('#new_entry')[0].reset();
+    attributes = { name: $('#new_entry_name').val() };
+    this.collection.create( attributes, {
+      wait: true,
+      success: function() {
+  	    $('#new_entry')[0].reset();
+      },
+      error: this.handleError
+    });
   },
+
+  handleError: function(entry, response){
+    if (response.status == 422) {
+      errors = $.parseJSON(response.responseText).errors
+      for (attribute in errors){
+        messages = errors[attribute];
+        for(i=0; i < messages.length; i++){
+          message = messages[i];
+          alert(""+ attribute + " " + message);
+        }
+      }
+    }
+  },
+
   appendEntry: function (entry) {
   	var view = new Entry({model: entry});
   	$('#entries').append(view.render().el);
