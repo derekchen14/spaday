@@ -6,7 +6,7 @@ var SpadayRouter = Backbone.Router.extend({
   },
   initialize: function(){
     this.collection = new Entries();
-    this.collection.fetch({reset: true});
+    this.collection.reset($('#container').data('entries'));
   },
   index: function(){
     var view = new EntriesIndex({collection: this.collection});

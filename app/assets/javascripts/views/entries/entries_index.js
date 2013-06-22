@@ -11,7 +11,7 @@ var EntriesIndex = Backbone.View.extend({
   },
   render: function(){
     this.$el.html(this.template());
-    this.collection.each(this.appendEntry);
+    this.collection.each(this.appendEntry, this);
     return this
   },
   addPeople: function (e) {
@@ -41,7 +41,7 @@ var EntriesIndex = Backbone.View.extend({
 
   appendEntry: function (entry) {
   	var view = new Entry({model: entry});
-  	$('#entries').append(view.render().el);
+  	this.$('#entries').append(view.render().el);
   },
 
   drawWinner: function(event) {
