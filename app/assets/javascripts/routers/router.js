@@ -13,7 +13,8 @@ var SpadayRouter = Backbone.Router.extend({
     $("#container").html(view.render().el);
   },
   show: function(id){
-    alert("Entry "+id);
+    var info = new EntryInfo({collection: this.collection});
+    $("#container").html(info.render().el);
   }
 
 });

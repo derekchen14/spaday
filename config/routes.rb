@@ -3,8 +3,9 @@ Spaday::Application.routes.draw do
     resources :entries
   end
 
-  root :to => 'main#index'
-  
+  root to: 'main#index'
+  match '*path', to: 'main#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,7 +5,7 @@ window.Spaday = {
   Routers: {}, 
   initialize: function(){
     var spadayRouter = new SpadayRouter();
-    Backbone.history.start();
+    Backbone.history.start({pushState: true});
   }
 }
 

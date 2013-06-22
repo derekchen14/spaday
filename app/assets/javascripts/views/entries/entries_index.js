@@ -1,14 +1,15 @@
 var EntriesIndex = Backbone.View.extend({
   template: JST['entries/index'],
+  events: {
+  	'submit #new_entry': 'addPeople',
+    'click #draw': 'drawWinner'
+  },
+
   initialize: function(){
     this.collection.on('reset', this.render, this);
     this.collection.on('add', this.appendEntry, this);
   },
 
-  events: {
-  	'submit #new_entry': 'addPeople',
-    'click #draw': 'drawWinner'
-  },
   render: function(){
     this.$el.html(this.template());
     this.collection.each(this.appendEntry, this);
