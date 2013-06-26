@@ -11,7 +11,7 @@ var Entry = Backbone.View.extend({
   },
 
   render: function() {
-    var text = {entry: this.model} 
+    var text = {entry: this.model.toJSON()} 
     this.$el.html(this.template(text));
     return this
   },
