@@ -2,7 +2,8 @@ var Entry = Backbone.View.extend({
   template: JST['entries/entry'],
   tagName: 'li',
   events: {
-    'click': 'showEntry'
+    'dblclick label': 'edit',
+    'keypress .edit': 'updateOnEnter'
   },
 
   initialize: function(){
@@ -13,6 +14,7 @@ var Entry = Backbone.View.extend({
   render: function() {
     var text = {entry: this.model.toJSON()} 
     this.$el.html(this.template(text));
+    this.$input = this.$('.edit');
     return this
   },
 
@@ -22,6 +24,28 @@ var Entry = Backbone.View.extend({
   },
   showEntry: function() {
     Backbone.history.navigate("entries/"+(this.model.get('id')), true)
+  },
+
+  edit: function(){
+    this.$('.content').hide();
+    this.$('.edit').show();
+  },
+
+  updateOnEnter: function(e){
+    if ( e.which === 13){
+      this.close();
+    }
+  },
+
+  close: function(){
+    var value = this.$input.val().trim();
+
+    if(value){
+      this.model.save({name: value});
+    }
+
+    this.$('content').show();
+    this.$('.edit').hide();
   }
 
 });
