@@ -1,3 +1,6 @@
 <label class="content">{{entry.name}}</label>
 <input class="edit" value="{{entry.name}}" />
 <span class="winner destroy">✖</span>
+{{#if entry.completed}}
+  <span>DONE!</span>
+{{/if}}

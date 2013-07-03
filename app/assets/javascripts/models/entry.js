@@ -1,9 +1,14 @@
 var Entry = Backbone.Model.extend({
 
-  win: function(){
-    this.set({winner: true});
-    this.save();
-    this.trigger('highlight');
+  defaults: {
+    completed: false
+  },
+
+  toggle: function(){
+    this.save({
+      completed: !this.get('completed')
+    });
   }
+
 
 });

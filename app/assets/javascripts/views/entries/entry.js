@@ -2,6 +2,7 @@ var Entry = Backbone.View.extend({
   template: JST['entries/entry'],
   tagName: 'li',
   events: {
+    'click .content': 'toggleComplete',
     'dblclick label': 'edit',
     'keypress .edit': 'updateOnEnter',
     'click .destroy': 'clear'
@@ -30,6 +31,7 @@ var Entry = Backbone.View.extend({
   edit: function(){
     this.$('.content').hide();
     this.$('.edit').show();
+    this.$input.focus();
   },
 
   updateOnEnter: function(e){
@@ -43,14 +45,20 @@ var Entry = Backbone.View.extend({
 
     if(value){
       this.model.save({name: value});
+    }else{
+      this.clear();
     }
 
-    this.$('content').show();
+    this.$('.content').show();
     this.$('.edit').hide();
   },
 
   clear: function(){
     this.model.destroy();
+  },
+
+  toggleComplete: function(){
+    this.model.toggle();
   }
 
 });
