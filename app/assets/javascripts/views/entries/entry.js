@@ -3,12 +3,13 @@ var Entry = Backbone.View.extend({
   tagName: 'li',
   events: {
     'dblclick label': 'edit',
-    'keypress .edit': 'updateOnEnter'
+    'keypress .edit': 'updateOnEnter',
+    'click .destroy': 'clear'
   },
 
   initialize: function(){
-    this.model.on('change', this.render, this);
-    this.model.on('highlight', this.highlightWinner, this);
+    this.listenTo(this.model, 'change', this.render);
+    this.listenTo(this.model, 'destroy', this.remove);
   },
 
   render: function() {
@@ -46,6 +47,10 @@ var Entry = Backbone.View.extend({
 
     this.$('content').show();
     this.$('.edit').hide();
+  },
+
+  clear: function(){
+    this.model.destroy();
   }
 
 });
