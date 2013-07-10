@@ -2,8 +2,8 @@ var Entry = Backbone.View.extend({
   template: JST['entries/entry'],
   tagName: 'li',
   events: {
-    'click .content': 'toggleComplete',
-    // 'dblclick label': 'edit',
+    'click .check': 'toggleComplete',
+    'dblclick label': 'edit',
     'keypress .edit': 'updateOnEnter',
     'click .destroy': 'clear'
   },
@@ -17,6 +17,8 @@ var Entry = Backbone.View.extend({
   render: function() {
     var text = {entry: this.model.toJSON()} 
     this.$el.html(this.template(text));
+    
+    this.$('.content').toggleClass('complete', this.model.get('completed'));
     this.$input = this.$('.edit');
     return this
   },
