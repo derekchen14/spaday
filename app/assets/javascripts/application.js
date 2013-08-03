@@ -10,16 +10,21 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+// We start by loading in the files in the vendor files and our gems
 //= require jquery
 //= require jquery_ujs
 //= require underscore
-//= require handlebars.runtime
-//= require handlebars
 //= require backbone
+//
+// Next we load in the application that creates the name space window.AddressBook
+//= require ./apps/spaday
 //= require spaday
-//= require_tree ../templates
+//
+// Now we can simply do require_tree for the rest of the classes
 //= require_tree ./models
 //= require_tree ./collections
-//= require_tree ./views
+//= require_tree ./helpers
 //= require_tree ./routers
-//= require_tree .
+//= require_tree ../templates
+//= require_tree ./views
+//= require_tree ./controllers
