@@ -1,7 +1,7 @@
 window.Spaday = {
   Models: {},
-  Collections: {},
   Views: {}, 
+  Collections: {},
   Routers: {}, 
   initialize: function(){
     var spadayRouter = new SpadayRouter();
@@ -10,5 +10,6 @@ window.Spaday = {
 }
 
 $(document).ready(function(){
+  alert('Coffeescrupt!');
   return Spaday.initialize();
 });
