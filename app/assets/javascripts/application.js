@@ -12,7 +12,6 @@
 //
 // We start by loading in the files in the vendor files and our gems
 //= require jquery
-//= require jquery_ujs
 //= require underscore
 //= require backbone
 //
@@ -23,6 +22,6 @@
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./routers
-//= require_tree ../templates
 //= require_tree ./views
 //= require_tree ./controllers
+//= require_tree ../templates

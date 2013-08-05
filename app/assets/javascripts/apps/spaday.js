@@ -10,6 +10,5 @@ window.Spaday = {
 }
 
 $(document).ready(function(){
-  alert('Coffeescrupt!');
   return Spaday.initialize();
 });
