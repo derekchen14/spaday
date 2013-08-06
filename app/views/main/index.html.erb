@@ -1,5 +1,36 @@
 <h1>SpaDay Activities</h1>
 
+<div id="container">
+  <div id="activities">
+    <form id="addActivity" action="#">
+      <div>
+        <label for="coverImage">CoverImage: </label>
+          <input id="coverImage" type="file" />
+        <label for="title">Title: </label>
+          <input id="title" type="text" />
+        <label for="instructor">Instructor: </label>
+          <input id="instructor" type="text" />
+        <label for="time">Time: </label>
+          <input id="time" type="text" />
+        <label for="location">Location: </label>
+          <input id="location" type="text" />
+        <button id="add">Sign up for Activity</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="activityContainer">
+    <%= image_tag "spaday.jpg", class: "default-img" %>
+    <ul>
+        <li>Title: Massage Session</li>
+        <li>Instructor: Helen Waite</li>
+        <li>Time: 3:00 PM</li>
+        <li>Location: Marina Lounge</li>
+    </ul>
+    <button class="delete">Remove</button>
+</div>
+
 <%= javascript_tag do %>
 	$(function() {
 		SpaDay.start();

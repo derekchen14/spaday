@@ -1,19 +1,10 @@
-<div id="container">
-  <div id="activities">
-    <form id="addActivity" action="#">
-      <div>
-        <label for="coverImage">CoverImage: </label>
-          <input id="coverImage" type="file" />
-        <label for="title">Title: </label>
-          <input id="title" type="text" />
-        <label for="instructor">Instructor: </label>
-          <input id="instructor" type="text" />
-        <label for="time">Time: </label>
-          <input id="time" type="text" />
-        <label for="location">Location: </label>
-          <input id="location" type="text" />
-        <button id="add">Sign up for Activity</button>
-      </div>
-    </form>
-  </div>
-</div>
+<script id="activityTemplate" type="text/template">
+    <img src="images/spaday.jpg"/>
+    <ul>
+        <li>title</li>
+        <li>instructor</li>
+        <li>time</li>
+        <li>location</li>
+    </ul>
+    <button class="delete">Remove</button>
+</script>
