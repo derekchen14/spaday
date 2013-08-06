@@ -1,0 +1,21 @@
+<h1>Instructors</h1>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @instructors.each do |instructor| %>
+  <tr>
+    <td><%= instructor.first_name %></td>
+    <td><%= instructor.last_name %></td>
+    <td><%= link_to "Edit", edit_instructor_path(instructor.id) %></td>
+    <td><%= link_to "Remove", instructor, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "Add Instructor", new_instructor_path %>

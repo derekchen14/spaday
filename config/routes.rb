@@ -1,9 +1,13 @@
 Spaday::Application.routes.draw do
+
+  root to: 'main#index'
+
+  resources :instructors
+
   scope "api" do
     resources :entries
   end
 
-  root to: 'main#index'
   match '*path', to: 'main#index'
 
 
