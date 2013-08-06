@@ -3,7 +3,7 @@ app.Activity = Backbone.Model.extend({
     coverImage: 'img/placeholder.png',
     title: 'No title',
     instructor: 'Unknown',
-    time: 'Unknown',
-    location: 'None'
+    time: 'sometime',
+    location: 'somewhere'
   }
 });
