@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20130805154041) do
   end
 
   create_table "instructors_services", :force => true do |t|
-    t.integer "instructor_id"
-    t.integer "service_id"
+    t.integer "instructor_id_id"
+    t.integer "service_id_id"
   end
 
   create_table "services", :force => true do |t|

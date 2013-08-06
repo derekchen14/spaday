@@ -1,0 +1,13 @@
+<h1>Add Service</h1>
+<%= form_for @service do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.fields_for :instructors do |instructor| %>
+    <select>
+      <option><%= instructor.first_name %></option>
+    </select>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

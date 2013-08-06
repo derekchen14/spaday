@@ -3,6 +3,7 @@ Spaday::Application.routes.draw do
   root to: 'main#index'
 
   resources :instructors
+  resources :services
 
   scope "api" do
     resources :entries
