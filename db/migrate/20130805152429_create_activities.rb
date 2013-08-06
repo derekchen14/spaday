@@ -3,7 +3,8 @@ class CreateActivities < ActiveRecord::Migration
     create_table :activities do |t|
 
       t.string :name
-      t.string :description
+      t.string :times
+      t.string :location
       t.integer :instructor_id
 
       t.timestamps
