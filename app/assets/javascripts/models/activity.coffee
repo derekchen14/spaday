@@ -7,7 +7,7 @@ app.Activity = Backbone.Model.extend
     location: 'somewhere'
 
 	initialize: ->
-		console.log 'this modle has been initialized'
+		console.log "this modle has been initialized"
 
 	parse: (response) ->
   	response.id = response._id

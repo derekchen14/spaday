@@ -3,7 +3,7 @@ app.ScheduleView = Backbone.View.extend
   events:
     'click #add':'addActivity'
 
-  initialize: (init) ->
+  initialize: ->
     @.collection = new app.Schedule()
     @.collection.fetch {reset: true}
     @.render()
@@ -11,9 +11,9 @@ app.ScheduleView = Backbone.View.extend
     @.listenTo @.collection, 'add', @.renderActivity
     @.listenTo @.collection, 'reset', @.render
 
-  render: =>
+  render: ->
     @.collection.each (item) ->
-      @.renderActivity( item )
+      @.renderActivity(item)
   renderActivity: (item) ->
     activityView = new app.ActivityView
       model: item

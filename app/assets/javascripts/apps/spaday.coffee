@@ -4,8 +4,9 @@ window.app =
   Collections: {}
   Routers: {}
   initialize: ->
+    foo = new app.ScheduleView()
     bar = new app.Activity()
-    spadayRouter = new SpadayRouter()
+    spadayRouter = new app.SpadayRouter()
     Backbone.history.start({pushState: true})
 
 $ ->
