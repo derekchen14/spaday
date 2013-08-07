@@ -1,5 +1,3 @@
-app = app || {}
-
 app.Activity = Backbone.Model.extend
   defaults:
     coverImage: 'img/placeholder.png'
@@ -7,3 +5,10 @@ app.Activity = Backbone.Model.extend
     instructor: 'Unknown'
     time: 'sometime'
     location: 'somewhere'
+
+	initialize: ->
+		console.log 'this modle has been initialized'
+
+	parse: (response) ->
+  	response.id = response._id
+  	response
