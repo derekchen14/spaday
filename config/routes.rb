@@ -1,6 +1,6 @@
 Spaday::Application.routes.draw do
   scope "api" do
-    resources :entries
+    resources :activities
   end
 
   root to: 'main#index'
