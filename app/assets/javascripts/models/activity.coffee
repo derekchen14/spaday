@@ -6,9 +6,6 @@ app.Activity = Backbone.Model.extend
 	  time: 'sometime'
 	  location: 'somewhere'
 
-	initialize: ->
-		console.log "this modle has fgagbeen initialized"
-
 	parse: (response) ->
   	response.id = response._id
   	response
