@@ -1,7 +1,8 @@
 <h1>SpaDay Activities</h1>
 
 <div id="container">
-  <div id="activities">
+
+  <div id="activityForm">
     <form id="addActivity" action="#">
       <div>
         <label for="coverImage">CoverImage: </label>
@@ -18,17 +19,16 @@
       </div>
     </form>
   </div>
-</div>
 
-<div class="activities">
-<div class="activityContainer">
-    <%= image_tag "spaday.jpg", class: "default-img" %>
-    <ul>
-        <li>Title: Massage Session</li>
-        <li>Instructor: Helen Waite</li>
-        <li>Time: 3:00 PM</li>
-        <li>Location: Marina Lounge</li>
-    </ul>
-    <button class="delete">Remove</button>
-</div>
+  <div class="activityList">
+      <%= image_tag "spaday.jpg", class: "default-img" %>
+      <ul>
+          <li>Title: Massage Session</li>
+          <li class="instructor">Instructor: Helen Waite</li>
+          <li>Time: 3:00 PM</li>
+          <li>Location: Marina Lounge</li>
+      </ul>
+      <button class="delete">Remove</button>
+  </div>
+
 </div>

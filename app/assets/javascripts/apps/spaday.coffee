@@ -8,7 +8,9 @@ window.app =
       {title: 'a', instructor: 'b', time: '2008', location: 'c'}
       {title: 'e', instructor: 'f', time: '2012', location: 'g'}
     ]
-    foo = new app.ScheduleView(activities)
+
+    foo = new app.ScheduleView activities
+    bar = new app.Activity 
     spadayRouter = new app.SpadayRouter()
     Backbone.history.start({pushState: true})
 
