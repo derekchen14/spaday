@@ -2,7 +2,6 @@ app.ScheduleView = Backbone.View.extend
   el: '#container'
   events:
     'click #add': 'addActivity'
-    # 'click .instructor': 'terraCotta'
 
   initialize: (preloaded_activities) ->
     @.collection = new app.Schedule(preloaded_activities)
@@ -20,7 +19,7 @@ app.ScheduleView = Backbone.View.extend
 
   renderActivity: (item) ->
     activityView = new app.ActivityView {model: item}
-    @.$el.append activityView.render().el
+    $('#activityList').append activityView.render().el
 
   addActivity: (e) -> 
     e.preventDefault()
@@ -29,7 +28,3 @@ app.ScheduleView = Backbone.View.extend
       if $(el).val() != ''
         formData[ el.id ] = $(el).val()
     @.collection.create(formData)
-
-  terraCotta: (e) ->
-    $('#activityList').append(@.template)
-    console.log 'it clicked'
