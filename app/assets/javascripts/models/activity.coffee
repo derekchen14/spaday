@@ -6,7 +6,6 @@ app.Activity = Backbone.Model.extend
 	  time: 'sometime'
 	  location: 'somewhere'
 
-	initialize: ->
 	parse: (response) ->
   	response.id = response._id
   	response

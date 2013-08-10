@@ -1,8 +1,8 @@
 app.ActivityView = Backbone.View.extend
 	tagName: 'div'
 	className: 'activityContainer'
-	template: _.template '<h1><%= title %></h1>' 
-	# $('h1').html()
+	#template: _.template $('#activityTemplate').html()
+	template: _.template '<h3><%= title %></h3>'
 
 	events:
     'click .delete': 'deleteActivity'

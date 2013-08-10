@@ -6,8 +6,6 @@ app.SpadayRouter = Backbone.Router.extend
   initialize: ->
     this.collection = new app.Schedule()
     this.collection.reset $('#activities').data('activities')
-  
-
 
 
 
