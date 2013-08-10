@@ -1,7 +1,7 @@
 app.ScheduleView = Backbone.View.extend
   el: '#container'
   events:
-    'click #add': 'terraCotta' #'addActivity'
+    'click #add': 'addActivity'
     'click .instructor': 'terraCotta'
 
   initialize: (preloaded_activities) ->
@@ -32,5 +32,5 @@ app.ScheduleView = Backbone.View.extend
     @.collection.create(formData)
 
   terraCotta: (e) ->
-    @.$el.append(@.template)
+    $('#activityList').append(@.template)
     console.log 'it clicked'

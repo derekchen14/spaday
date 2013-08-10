@@ -9,7 +9,7 @@ h1 {
   color: #9494B8;
 }
 
-#container {
+#activityForm {
   width: 900px;
   margin: 30px auto;
   background-color: #F4EFFA;
@@ -18,7 +18,7 @@ h1 {
   margin-top: 20px;
 }
 
-.activityList {
+.activityContainer {
   border: 1px solid #aaa;
   width: 420px;
   height: 220px;
@@ -41,8 +41,9 @@ h1 {
     margin: 10px 0px;
   }
 }
-div.activities > div:nth-child(odd) {
+div#activityList > div:nth-child(odd) {
   margin-left: 120px;
+  outline: 3px solid red;
 }
 
 #addActivity {
