@@ -2,7 +2,7 @@ app.ScheduleView = Backbone.View.extend
   el: '#container'
   events:
     'click #add': 'addActivity'
-    'click .instructor': 'terraCotta'
+    # 'click .instructor': 'terraCotta'
 
   initialize: (preloaded_activities) ->
     @.collection = new app.Schedule(preloaded_activities)
@@ -11,8 +11,7 @@ app.ScheduleView = Backbone.View.extend
 
     @.listenTo @.collection, 'add', @.renderActivity
     @.listenTo @.collection, 'reset', @.render
-    # console.log @.options[0].time
-    @.template = $('#activityTemplate').html()
+
 
   render: ->
     @.collection.each( (item) ->

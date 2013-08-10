@@ -1,15 +1,15 @@
 app.ActivityView = Backbone.View.extend
 	tagName: 'div'
 	className: 'activityContainer'
-  # template: _.template $('h1').html()
-	template: _.template '<h2>Foobar</h2>'
-	
+	template: _.template '<h1><%= title %></h1>' 
+	# $('h1').html()
+
 	events:
     'click .delete': 'deleteActivity'
 
 	render: ->
     attrs = this.model.toJSON();
-    @.$el.html this.template(attrs)
+    @.$el.html @.template(attrs)
     @
 	deleteActivity: ->
     this.model.destroy()
