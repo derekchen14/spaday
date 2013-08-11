@@ -1,8 +1,9 @@
 class InstructorsController < ApplicationController
-  respond_to :json
+  respond_to :html, :json
 
   def index
     respond_with Instructor.all
+    # respond_with @instructors = Instructor.all
   end
 
   def show

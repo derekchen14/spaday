@@ -1,8 +1,8 @@
 class ActivitiesController < ApplicationController
-  respond_to :json
+  respond_to :html, :json
 
   def index
-    respond_with Activity.all
+    respond_with @activities = Activity.all
   end
 
   def show
@@ -10,7 +10,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    respond_with Activity.create(params[:activity])
+    @task = Activity.new(params[:activity])
+    @task.save
+    # no if-else block is necessary because Rails automatically replies
+    # with "status: unprocessable_entity" in the case of a failed save 
+    respond_with @task
   end
 
   def update
