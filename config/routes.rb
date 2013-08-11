@@ -3,8 +3,8 @@ Spaday::Application.routes.draw do
     resources :activities
   end
 
-  root to: 'main#index'
-  match '*path', to: 'main#index'
+  root to: 'application#index'
+  match '*path', to: 'application#index'
 
 
   # The priority is based upon order of creation:
