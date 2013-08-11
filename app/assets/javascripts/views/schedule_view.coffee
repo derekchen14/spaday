@@ -19,7 +19,7 @@ app.ScheduleView = Backbone.View.extend
 
   renderActivity: (item) ->
     activityView = new app.ActivityView {model: item}
-    $('#activityList').append activityView.render().el
+    $('#activityList').append activityView.render()
 
   addActivity: (e) -> 
     e.preventDefault()

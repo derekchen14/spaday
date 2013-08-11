@@ -7,12 +7,11 @@ app.ActivityView = Backbone.View.extend
     'click .delete': 'deleteActivity'
 
   initialize: ->
-  	console.log 'model has been initialized'
   	@.template = _.template $('#activityTemplate').html()
 	render: ->
-    attrs = this.model.toJSON();
+    attrs = @.model.toJSON()
     @.$el.html @.template(attrs)
-    @
+    @.el
 	deleteActivity: ->
-    this.model.destroy()
-    this.remove()
+    @.model.destroy()
+    @.remove()
