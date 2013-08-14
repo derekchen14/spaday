@@ -4,13 +4,13 @@ app.ScheduleView = Backbone.View.extend
     'click #add': 'addActivity'
 
   initialize: (preloaded_activities) ->
+    # console.log @.options[1].time => '2012'
     @.collection = new app.Schedule(preloaded_activities)
     # @.collection.fetch {reset: true}
     @.render()
 
     @.listenTo @.collection, 'add', @.renderActivity
     @.listenTo @.collection, 'reset', @.render
-
 
   render: ->
     @.collection.each( (item) ->
