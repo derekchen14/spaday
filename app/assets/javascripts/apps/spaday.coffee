@@ -3,8 +3,8 @@ window.app =
   Views: {} 
   Collections: {}
   Routers: {}
-  initialize: (data) ->
-    spadaySchedule = new app.ScheduleView data
+  initialize: () ->
+    spadaySchedule = new app.ScheduleView
     spadayRouter = new app.SpadayRouter()
     Backbone.history.start()
     # {pushState: true}
@@ -15,4 +15,5 @@ $ ->
     {title: 'e', instructor: 'f', time: '2012', location: 'g'}
     {title: 'h', instructor: 'j', time: '2009', location: 'k'}
   ]
-  app.initialize(preloaded_activities)
+  app.initialize()
+  # preloaded_activities
