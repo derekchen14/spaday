@@ -11,6 +11,8 @@ app.ScheduleView = Backbone.View.extend
 
     @.listenTo @.collection, 'add', @.renderActivity
     @.listenTo @.collection, 'reset', @.render
+    @.listenTo @.collection, 'request', @.requestLog
+    @.listenTo @.collection, 'sync', @.syncLog
 
   render: ->
     @.collection.each( (item) ->
@@ -27,4 +29,15 @@ app.ScheduleView = Backbone.View.extend
     $('#addActivity div').children('input').each (i,el) ->
       if $(el).val() != ''
         formData[ el.id ] = $(el).val()
-    @.collection.create(formData)
+    @.collection.create formData,
+
+  requestLog: (data) ->
+    console.log 'we send data right?'
+    console.log data.attributes
+
+  syncLog: (response) ->
+    console.log 'we get response data?'
+    console.log response
+
+    # @.collection.add new Activity(formData)
+    
