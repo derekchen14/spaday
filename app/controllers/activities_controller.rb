@@ -10,12 +10,8 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    #puts '-------'+params[:activity]+'-------'
-    # @task = Activity.new(params[:activity])
-    @task = Activity.new({title: "foo", time: "bar", location: "place"})
+    @task = Activity.new(params[:activity])
     @task.save
-    # no if-else block is necessary because Rails automatically replies
-    # with "status: unprocessable_entity" in the case of a failed save 
     respond_with @task
   end
 
