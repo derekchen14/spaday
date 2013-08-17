@@ -1,4 +1,5 @@
 app.ActivityView = Backbone.View.extend
+  template: JST['templates/activity/new']
 	tagName: 'div'
 	className: 'activityContainer'
 	# template: _.template $('#activityTemplate').html()
@@ -7,7 +8,7 @@ app.ActivityView = Backbone.View.extend
     'click .delete': 'deleteActivity'
 
   initialize: ->
-  	@.template = _.template $('#activityTemplate').html()
+  	# @.template = _.template $('#activityTemplate').html()
 	render: ->
     attrs = @.model.toJSON()
     @.$el.html @.template(attrs)

@@ -14,6 +14,7 @@
 //= require jquery
 //= require underscore
 //= require backbone
+//= require handlebars
 //
 // Next we load in the application that creates the name space window.AddressBook
 //= require ./apps/spaday
@@ -23,4 +24,5 @@
 //= require_tree ./collections
 //= require_tree ./routers
 //= require_tree ./views
+//= require_tree ./templates
 //= require_tree ./controllers
