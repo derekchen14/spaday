@@ -1,18 +1,18 @@
 app.ActivityView = Backbone.View.extend
-  template: JST['templates/activity/new']
-	tagName: 'div'
-	className: 'activityContainer'
-	# template: _.template $('#activityTemplate').html()
+  tagName: 'div'
+  className: 'activityContainer'
+  # template: _.template $('#activityTemplate').html()
+  # template: JST['templates/activity/new']
 
-	events:
+  events:
     'click .delete': 'deleteActivity'
 
   initialize: ->
-  	# @.template = _.template $('#activityTemplate').html()
-	render: ->
+    @.template = Handlebars.compile $("#activityTemplate").html()
+  render: ->
     attrs = @.model.toJSON()
     @.$el.html @.template(attrs)
     @.el
-	deleteActivity: ->
+  deleteActivity: ->
     @.model.destroy()
     @.remove()
