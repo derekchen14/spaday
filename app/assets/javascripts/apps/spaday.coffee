@@ -6,8 +6,7 @@ window.app =
   initialize: () ->
     spadaySchedule = new app.ScheduleView
     spadayRouter = new app.SpadayRouter
-    Backbone.history.start()
-    # {pushState: true}
+    Backbone.history.start({pushState: true})
 
 $ ->
   app.initialize()

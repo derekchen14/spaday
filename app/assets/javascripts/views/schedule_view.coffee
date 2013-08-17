@@ -4,14 +4,12 @@ app.ScheduleView = Backbone.View.extend
     'click #add': 'addActivity'
 
   initialize: () ->
-    # console.log @.options[1].time => '2012'
     @.collection = new app.Schedule()
     @.collection.fetch {reset: true}
     @.render()
 
     @.listenTo @.collection, 'add', @.renderActivity
     @.listenTo @.collection, 'reset', @.render
-    @.listenTo @.collection, 'request', @.requestLog
     @.listenTo @.collection, 'sync', @.syncLog
 
   render: ->
@@ -31,13 +29,7 @@ app.ScheduleView = Backbone.View.extend
         formData[ el.id ] = $(el).val()
     @.collection.create formData
 
-  requestLog: (data) ->
-    console.log 'Data we are requesting:'
-    console.log data.attributes
-
   syncLog: (response) ->
     console.log 'Data in the database:'
     console.log response
-
-    # @.collection.add new Activity(formData)
     
